@@ -27,8 +27,8 @@ class TranslationExtension extends BaseTranslationExtension
     private $localeManager;
 
     public function __construct(
-        TransUnitManagerInterface $translator,
-        TransUnitManager $transUnitManager,
+        TranslatorInterface $translator,
+        TransUnitManagerInterface $transUnitManager,
         StorageInterface $storage,
         LocaleManagerInterface $localeManager,
         $autoDiscover,
