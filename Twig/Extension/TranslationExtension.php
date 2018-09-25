@@ -5,12 +5,13 @@ namespace LexikTranslationSonataBundle\Twig\Extension;
 use Lexik\Bundle\TranslationBundle\Manager\LocaleManagerInterface;
 use Lexik\Bundle\TranslationBundle\Manager\TransUnitManager;
 use Lexik\Bundle\TranslationBundle\Storage\StorageInterface;
+use Lexik\Bundle\TranslationBundle\Manager\TransUnitManagerInterface;
 use Symfony\Bridge\Twig\Extension\TranslationExtension as BaseTranslationExtension;
 use Symfony\Component\Translation\TranslatorInterface;
 
 class TranslationExtension extends BaseTranslationExtension
 {
-    /** @var TransUnitManager */
+    /** @var TransUnitManagerInterface */
     private $transUnitManager;
 
     /** @var StorageInterface */
@@ -26,7 +27,7 @@ class TranslationExtension extends BaseTranslationExtension
     private $localeManager;
 
     public function __construct(
-        TranslatorInterface $translator,
+        TransUnitManagerInterface $translator,
         TransUnitManager $transUnitManager,
         StorageInterface $storage,
         LocaleManagerInterface $localeManager,
